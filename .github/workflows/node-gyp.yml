@@ -69,4 +69,4 @@ jobs:
         shell: pwsh
         run: |
           cd node-gyp
-          npm run test --python="${env:pythonLocation}\\python.exe"
+          npm run test  # --python="${env:pythonLocation}\\python.exe"
