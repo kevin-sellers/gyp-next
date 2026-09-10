@@ -51,6 +51,7 @@ jobs:
           pip uninstall -y gyp-next
       - name: Install Node.js dependencies
         run: |
+          npm install --global npm@12
           cd node-gyp
           npm install --no-progress
       - name: Replace gyp in node-gyp
@@ -62,7 +63,7 @@ jobs:
         if: runner.os != 'Windows'
         run: |
           cd node-gyp
-          npm test --python="${pythonLocation}/python"
+          npm test  # --python="${pythonLocation}/python"
       - name: Run tests (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
